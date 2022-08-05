@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    border: 1px solid black;
+    max-width: 1024px;
+    height: 768px;
+    margin: auto;
+}
+
+
+.timer span{
+    font-size: 20px;
+    float: right;
+    margin-top: 13px;
+    margin-right: 10px;
+}
+
+.top{
+    display: flex;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.pic{
+    display: block;
+    max-width: 100%;
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+.pl1{
+    float: left;
+    margin-top: 30px;
+    margin-left: 7%;
+}
+
+.pl1 div{
+    float: right;
+    border-top: 2px solid black;
+    background-color: #F0F0F0;
+    width: 180px;
+    height: 25px;
+    line-height: 25px;
+    margin: 18px 10px;
+    padding-left: 10px;
+    border-radius: 0 0 5px 2px;
+}
+
+.boxt{
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timer{
+    display: flex;
+    border: 1px solid black;
+    padding: 1px 7px;
+}
+
+.pl2{
+    float: right;
+    margin-top: 30px;
+    margin-right: 7%;
+}
+
+.pl2 div{
+    float: left;
+    border-top: 2px solid black;
+    background-color: #F0F0F0;
+    width: 180px;
+    height: 25px;
+    line-height: 25px;
+    text-align: right;
+    margin: 18px 10px;
+    padding-right: 10px;
+    border-radius: 0 0 2px 5px;
+}
+
+.question{
+    max-width: 650px;
+    display: block;
+    margin: 20px auto 8px auto;
+    text-align: center;
+    line-height: 45px;
+    height: 45px;
+    background-color: #F0F0F0	;
+}
+
+.coin1, .coin2{
+    display: block;
+    max-width: 100%;
+    width: 50px;
+    height: 50px;
+    margin-top: 35px;
+}
+
+.coin2{
+    float: right;
+}
+
+.main{
+    display: flex;
+}
+
+.box1{
+    width: 400px;
+    height: 220px;
+    border: 1px solid black;
+    margin-bottom: 9%;
+    margin-top: 5%;
+}
+
+.box2{
+    width: 400px;
+    height: 220px;
+    border: 1px solid black;
+}
+
+.left{
+    margin-left: 5%;
+}
+
+.right{
+    margin-left: 5.74%;
+}
+
+.vbar{
+    border: 1px solid black;
+    margin: 5px 0 0 5.64%;
+}
