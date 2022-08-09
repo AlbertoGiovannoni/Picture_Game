@@ -1,0 +1,49 @@
+[
+    {
+        "id" : 0,
+        "title": "Decollazione di San Giovanni Battista, Caravaggio",
+        "year": 1608,
+        "question": "In quale quadro è contenuta una fune?",
+        "description": "Compaiono nella tela il carceriere imperterrito, il boia che s'appresta a vibrare il colpo finale, una giovane che porta un bacile su cui raccoglierà la testa del Battista e una vecchia con le mani al volto per l'orrore; sulla destra due carcerati assistono da una grata alla scena. In questo quadro il rapporto figure-spazio è rovesciato a vantaggio di quest'ultimo, tanto da creare ampie zone di vuoto, mentre attenuando i contrasti luministici, l'artista immerge la scena nella penombra. Il Santo è colto negli ultimi spasmi di vita, con le mani legate dietro le spalle, e indossa l'abituale veste di peli di cammello intrecciati (suo emblema), ed una tunica rossa (rimando al futuro martirio di Cristo suo cugino). Al centro della composizione è il corto pugnale, detto 'misericordia', col quale il boia s'appresta a staccare la testa dal busto; al di sotto del Santo la spada con cui era stato scagliato il primo colpo, mentre una corda recisa e fissata ad un anello sulla parete a destra fa intuire cos'era successo qualche istante prima, quando il Santo era stato slegato e portato avanti. Il muro vuoto della prigione interrotto dalle inferriate, i due prigionieri che osservano la scena ed il tono cupo dell'opera rimandano ad una spietata esecuzione, eseguita alle prime luci dell'alba."
+    },
+
+    {
+        "id" : 1,
+        "title": "Guernica, Pablo Picasso",
+        "year": 1937,
+        "question": "In quale quadro è contenuta una lampadina?",
+        "description" : "L'ordine con cui deve essere letta l'opera d'arte è da destra a sinistra, poiché il lato destro era vicino all'entrata del luogo per cui è stata progettata, cioè il padiglione della Repubblica Spagnola all'Esposizione internazionale di Parigi. È un dipinto di protesta contro la violenza, la distruzione e la guerra in generale. La presenza della madre con il neonato in braccio, di un cavallo, che somiglia a un asino, simbolo dell'irrompere della brutalità, e di un toro, simbolo del sacrificio nella corrida ricorda la composizione del presepe natalizio, che risulta però sconvolto dal bombardamento. La colomba a sinistra, richiamo alla pace, ha un moto di strazio prima di cadere a terra; il toro rappresenta la follia della guerra, mentre il cavallo, trafitto da una lancia, simboleggia la Spagna."
+    },
+
+    {
+        "id" : 2,
+        "title": "I nottambuli, Edward Hopper",
+        "year": 1942,
+        "question": "In quale quadro è contenuta una tazza",
+        "description" : "Fuori dal locale la strada è deserta perché la scena è ambientata a notte fonda. Non c'è alcuna interazione tra i protagonisti e ciascuno di loro è immerso nei propri pensieri. Tale atteggiamento mette in risalto il tema principale del quadro: la solitudine. Non è chiaro se il locale dipinto nel quadro fosse reale o fosse frutto dell'immaginazione del pittore. Lo stesso Hopper disse che si era ispirato ad un locale che si trovava a Greenwich Village, nel quartiere di Manhattan. Alcuni studiosi ritengono invece che questo bar dovesse trovarsi a Mulry Square, all'incrocio tra la 7ª Avenue South, Greenwich Avenue e l'11ª West Street, a sette isolati dallo studio del pittore. Kelly Grovier lo considerò 'il Grande dipinto americano'."
+    },
+
+    {
+        "id" : 3,
+        "title": "Una domenica pomeriggio sull'isola della Grande-Jatte, Seurat",
+        "year": 1886,
+        "question": "In quale quadro è contenuta una tromba?",
+        "description" : "In un parco, sulle rive della Senna, Seurat dipinge la folla domenicale dei parigini. Donne con abiti tipici dell’epoca e di gran moda che passeggiano riparandosi con graziosi ombrellini. Poi, canottieri che riposano dopo la competizione e, quindi, bambini che giocano composti. Alcuni animali da compagnia seguono poi i loro padroni. Una coppia di signori borghesi porta una scimmietta al guinzaglio. La Senna infine scorre a sinistra e sull’acqua scivolano alcune piccole imbarcazioni."
+    },
+
+    {
+        "id" : 4,
+        "title": "La persistenza della memoria, Salvador Dalí",
+        "year": 1931,
+        "question": "In quale quadro sono contenute delle formiche?",
+        "description" : "La persistenza della memoria raffigura un paesaggio costiero della costa Brava, nei pressi di Port Lligat, dominato da un cielo con delle sfumature gialle e celesti. La scena, disabitata e scevra di ogni vegetazione, è popolata da diversi oggetti: un parallelepipedo color terra, un ulivo senza foglie (forse senza vita) che sorge su quest'ultimo, un occhio dalle lunghe ciglia addormentato e un plinto blu sullo sfondo, che fa pendant con il mare retrostante. L'attenzione dell'osservatore, tuttavia, è catturata dai tre orologi molli, quasi liquefatti, che di fatto sono i protagonisti della scena. Squagliandosi, questi assumono la foggia dei loro sostegni: il primo ha una mosca su di esso e scivola oltre il bordo del volume squadrato collocato in primo piano, il secondo è sospeso sull'unico ramo dell'albero secco appoggiato sul parallelepipedo, e il terzo è avvolto a spirale sulla timida figura embrionale colante sul suolo. Un quarto orologio, l'unico ad essere rimasto allo stato solido, è collocato sempre sul parallelepipedo ed è ricoperto di formiche nere brulicanti; l'artista catalano ha da sempre nutrito una fobia verso questi insetti, sin da quando ancora bambino li vide divorare un coleottero."
+    },
+
+    {
+        "id" : 5,
+        "title": "Il bar delle Folies-Bergère, Manet",
+        "year": 1882,
+        "question": "In quale quadro sono contenute delle rose?",
+        "description" : "Quello che a prima vista sembra l’interno di un semplice bar è in realtà l’istantanea di un locale di appuntamenti di fine Ottocento. In primo piano la cameriera è ferma e in piedi. Si trova dietro al bancone delle Folies-Bergère, il locale trasgressivo e alla moda di Parigi. Davanti a lei sono poggiate sul marmo bottiglie di champagne e di birra. Su di una alzata sono esposti dei mandarini mentre due rose sporgono da un calice. Nonostante la folla che pare animarsi alle sue spalle la cameriera è l’unico personaggio veramente reale. Infatti dietro di lei è posto un grande specchio che occupa tutta la parete."
+    }
+]

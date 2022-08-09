@@ -8,15 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript" src="js/touch.js"></script>
+    <script type="text/javascript" src="js/details.json"></script>
+    <script src="jquery-3.6.0.min.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-
     <div class="top">
         <div class="pl1">
             <img src="img/male.png" alt="player 1 avatar" class="pic">
-            <div>Player 1</div>
+            <div><input type="text" class="input1"></input></div>
         </div>
         <div class="boxt">
             <div class="timer">
@@ -24,39 +26,54 @@
             </div>
         </div>
         <div class="pl2">
-            <div>Player 2</div>
+            <div><input type="text" class="input2"></div>
             <img src="img/female.png" alt="player 2 avatar" class="pic">
         </div>
     </div>
 
     <div class="question">
-        <span>Question Box</span>
+        <span id="text">Question Box</span>
     </div>
-
+    <div class="appear">
+        <div class="title">
+            <span id="title">Una domenica pomeriggio sull'isola della Grande-Jatte, Seurat</span>
+        </div>
+        <div class="year">
+            <span id="year">Anno di completamento dell'opera: </span>
+        </div>
+        <div class="description">
+            <span id="description">Compaiono nella tela il carceriere imperterrito, il boia che s'appresta a vibrare il colpo finale, una giovane che porta un bacile su cui raccoglierà la testa del Battista e una vecchia con le mani al volto per l'orrore; sulla destra due carcerati assistono da una grata alla scena. In questo quadro il rapporto figure-spazio è rovesciato a vantaggio di quest'ultimo, tanto da creare ampie zone di vuoto, mentre attenuando i contrasti luministici, l'artista immerge la scena nella penombra. Il Santo è colto negli ultimi spasmi di vita, con le mani legate dietro le spalle, e indossa l'abituale veste di peli di cammello intrecciati (suo emblema), ed una tunica rossa (rimando al futuro martirio di Cristo suo cugino). Al centro della composizione è il corto pugnale, detto "misericordia", col quale il boia s'appresta a staccare la testa dal busto; al di sotto del Santo la spada con cui era stato scagliato il primo colpo, mentre una corda recisa e fissata ad un anello sulla parete a destra fa intuire cos'era successo qualche istante prima, quando il Santo era stato slegato e portato avanti. Il muro vuoto della prigione interrotto dalle inferriate, i due prigionieri che osservano la scena ed il tono cupo dell'opera rimandano ad una spietata esecuzione, eseguita alle prime luci dell'alba.</span>
+        </div>
+    </div>
     <div class="main">
         <div class="left">
             <div class="box1">
-
+                <img src="" class="picture1l">
             </div>
             <div class="box2">
-
+                <img src="" class="picture2l">
             </div>
-            <img src="img/coin.png" alt="score coin" class="coin1">
+            <div class="score1">
+                <img src="img/coin.png" alt="score coin" class="coin1">
+                <span id="s1">0</span>
+            </div>
         </div>
         <div class="vbar">
 
         </div>
         <div class="right">
             <div class="box1">
-
+                <img src="" class="picture1r">
             </div>
             <div class="box2">
-
+                <img src="" class="picture2r">
             </div>
-            <img src="img/coin.png" alt="score coin" class="coin2">
+            <div class="score2">
+                <span id="s2">0</span>
+                <img src="img/coin.png" alt="score coin" class="coin2">               
+            </div>
         </div>
-    </div>
-
+    </div>    
 </body>
 
 </html>
