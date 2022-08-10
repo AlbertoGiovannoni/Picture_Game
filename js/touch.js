@@ -29,6 +29,12 @@ request.onload = function () {
             score1 = parseInt(score1);
             score2 = parseInt(score2);
 
+            var rtext = document.getElementById('rtext');
+
+            var title = document.getElementById("title");
+            var year = document.getElementById("year");
+            var description = document.getElementById("description");
+
             var question = document.getElementById("text"); //serve per poter modificare la domanda fra un round ed il successivo
             question.innerHTML = info[i].question;
 
@@ -51,10 +57,16 @@ request.onload = function () {
                 correct = 2;
             }
 
+            title.innerHTML = info[i].title;
+            year.innerHTML += info[i].year;
+            description.innerHTML = info[i].description;
+
             $('.picture1l').on('click', function () {
                 if (point == false) {
                     check(1, 1);
                     point = true;
+                    opacity();
+                    fadeInResult();
                 }
             })
 
@@ -62,6 +74,8 @@ request.onload = function () {
                 if (point == false) {
                     check(1, 2);
                     point = true;
+                    opacity();
+                    fadeInResult();
                 }
             })
 
@@ -69,6 +83,8 @@ request.onload = function () {
                 if (point == false) {
                     check(2, 1);
                     point = true;
+                    opacity();
+                    fadeInResult();
                 }
             })
 
@@ -76,36 +92,70 @@ request.onload = function () {
                 if (point == false) {
                     check(2, 2);
                     point = true;
+                    opacity();
+                    fadeInResult();
                 }
             })
+
+            $('#result').on('click', function () {
+                $("#result").css("opacity", "0");
+                fadeInAppear();
+            }
+            )
 
             function check(planswer, player) {   // funzione che attribuisce il punto dopo aver controllato la risposta
                 if (planswer == correct) {
                     if (player == 1) {
                         score1++;
                         coin1.innerHTML = score1;
+                        rtext.innerHTML = "CORRETTO"
                     }
                     else {
                         score2++;
                         coin2.innerHTML = score2;
+                        rtext.innerHTML = "ERRATO"
+                        $("#result").css("background-color", "red")
                     }
                 }
                 else {
                     if (player == 1) {
                         score2++;
                         coin2.innerHTML = score2;
+                        rtext.innerHTML = "ERRATO"
+                        $("#result").css("background-color", "red")
                     }
                     else {
                         score1++;
                         coin1.innerHTML = score1;
+                        rtext.innerHTML = "CORRETTO"
                     }
                 }
             }
 
-            function sleep(s) {
-                var now = new Date().getTime();
-                while (new Date().getTime() < now + (s * 1000)) { // non faccio niente 
-                }
+            // function sleep(s) {
+            //     var now = new Date().getTime();
+            //     while (new Date().getTime() < now + (s * 1000)) { // non faccio niente 
+            //     }
+            // }
+
+
+            function fadeInAppear() {
+                $("#appear").css("z-index", "1");
+                $("#appear").fadeTo("normal", 1)
+            }
+
+            function fadeInResult() {
+                $("#result").css("z-index", "1");
+                $("#result").fadeTo("slow", 1)
+            }
+
+            function opacity() {
+                $("#top").css("opacity", "0.4");
+                $("#question").css("opacity", "0.4");
+                $("#right").css("opacity", "0.4");
+                $("#left").css("opacity", "0.4");
+                $("#vbar").css("opacity", "0");
+                $('img').toggleClass('filter');
             }
 
 
@@ -120,6 +170,5 @@ request.onload = function () {
         }
 
     );
-
 
 };
