@@ -35,9 +35,6 @@ request.onload = function () {
             var title = document.getElementById("title");
             var year = document.getElementById("year");
             var description = document.getElementById("description");
-            while (j == i) {  //impedisce che i sia uguale a j
-                var j = Math.round(Math.random() * 5);
-            };
 
             var question; //serve per poter modificare la domanda fra un round ed il successivo
 
@@ -96,31 +93,57 @@ request.onload = function () {
                 point = false;
                 $("#appear").css("z-index", "-1");
                 $("#appear").css("opacity", "0");
-                i = Math.round(Math.random() * 5);
-                j = Math.round(Math.random() * 5);
-                k = Math.round(Math.random());
-                while (j == i) {
-                    j = Math.round(Math.random() * 5);
-                };
+
                 randomImg();
                 randomQuest();
                 rendomDesc();
+
+                score1 = coin1.textContent; //pl1 e pl2 sono i contatori. Se uno dei due arriva a 5 la partita termina
+                score2 = coin2.textContent;
+                score1 = parseInt(score1);
+                score2 = parseInt(score2);
+
+                if (score1 == 1) {
+                    opacityOn();
+                    winner1();
+                }
+                else if (score2 == 1) {
+                    opacityOn();
+                    winner2();
+                }
+            })
+
+            $('#newGame').click(function () {
+                score1 = 0;
+                score2 = 0;
+                coin1.textContent = "0";
+                coin2.textContent = "0";
+                opacityOff();
+                $("#end").css("z-index", "-1");
             })
 
             function randomImg() {
-                if (k == 0) {
-                    $('.picture1l').attr('src', 'img/img' + i + '.jpg');  // questo serve a non mettere sempre la risposta corretta in prima posizione
-                    $('.picture1r').attr('src', 'img/img' + i + '.jpg');
-                    $('.picture2l').attr('src', 'img/img' + j + '.jpg');
-                    $('.picture2r').attr('src', 'img/img' + j + '.jpg');
-                    correct = 1;
-                }
-                else {
-                    $('.picture1l').attr('src', 'img/img' + j + '.jpg');
-                    $('.picture1r').attr('src', 'img/img' + j + '.jpg');
-                    $('.picture2l').attr('src', 'img/img' + i + '.jpg');
-                    $('.picture2r').attr('src', 'img/img' + i + '.jpg');
-                    correct = 2;
+                if (score1 != 1 && score2 != 1) {
+                    i = Math.round(Math.random() * 5);
+                    j = Math.round(Math.random() * 5);
+                    k = Math.round(Math.random());
+                    while (j == i) {
+                        j = Math.round(Math.random() * 5);
+                    };
+                    if (k == 0) {
+                        $('.picture1l').attr('src', 'img/img' + i + '.jpg');  // questo serve a non mettere sempre la risposta corretta in prima posizione
+                        $('.picture1r').attr('src', 'img/img' + i + '.jpg');
+                        $('.picture2l').attr('src', 'img/img' + j + '.jpg');
+                        $('.picture2r').attr('src', 'img/img' + j + '.jpg');
+                        correct = 1;
+                    }
+                    else {
+                        $('.picture1l').attr('src', 'img/img' + j + '.jpg');
+                        $('.picture1r').attr('src', 'img/img' + j + '.jpg');
+                        $('.picture2l').attr('src', 'img/img' + i + '.jpg');
+                        $('.picture2r').attr('src', 'img/img' + i + '.jpg');
+                        correct = 2;
+                    }
                 }
             }
 
@@ -156,8 +179,6 @@ request.onload = function () {
                 }
             }
 
-
-
             function fadeInAppear() {
                 $("#appear").css("z-index", "1");
                 $("#appear").fadeTo("normal", 1)
@@ -185,25 +206,32 @@ request.onload = function () {
             }
 
             function randomQuest() {
-                question = document.getElementById("text"); //serve per poter modificare la domanda fra un round ed il successivo
-                question.innerHTML = info[i].question;
+                if (score1 != 1 && score2 != 1) {
+                    question = document.getElementById("text"); //serve per poter modificare la domanda fra un round ed il successivo
+                    question.innerHTML = info[i].question;
+                }
             }
 
             function rendomDesc() {
-                title.innerHTML = info[i].title;
-                year.innerHTML += info[i].year;
-                description.innerHTML = info[i].description;
+                if (score1 != 1 && score2 != 1) {
+                    title.innerHTML = info[i].title;
+                    year.innerHTML += info[i].year;
+                    description.innerHTML = info[i].description;
+                }
             }
 
+            function winner1() {
+                $("#end").css("z-index", "2");
+                var winner = document.getElementById("winner");
+                winner.innerHTML = "VINCE IL GIOCATORE 1";
+            }
 
-            // $('.picture1l').on('click', function () {
-            //     $('.picture1l').attr('src', 'img/img' + 5 + '.jpg');
-            // })
+            function winner2() {
+                $("#end").css("z-index", "2");
+                var winner = document.getElementById("winner");
+                winner.innerHTML = "VINCE IL GIOCATORE 2";
+            }
 
-            // page = document.getElementsByTagName('body')[0];  serve a mettere s schermo intero ma devo riaggiustare i box
-
-            // page.width = window.innerWidth;
-            // page.height = window.innerHeight;
         }
 
     );
