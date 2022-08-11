@@ -38,17 +38,14 @@ request.onload = function () {
             while (j == i) {  //impedisce che i sia uguale a j
                 var j = Math.round(Math.random() * 5);
             };
+
+            var question; //serve per poter modificare la domanda fra un round ed il successivo
+
+            randomQuest();
+
             randomImg();
 
-            var question = document.getElementById("text"); //serve per poter modificare la domanda fra un round ed il successivo
-            question.innerHTML = info[i].question;
-
-
-
-
-            title.innerHTML = info[i].title;
-            year.innerHTML += info[i].year;
-            description.innerHTML = info[i].description;
+            rendomDesc();
 
             $('.picture1l').on('click', function () {
                 if (point == false) {
@@ -87,16 +84,27 @@ request.onload = function () {
             })
 
             $('#result').on('click', function () {
+                $("#result").css("z-index", "-1");
                 $("#result").css("opacity", "0");
+                $('img').toggleClass("filter");
                 fadeInAppear();
             })
 
             $('#next').on('click', function () {
-                point = false;
                 opacityOff();
+                $('img').toggleClass("filter");
+                point = false;
                 $("#appear").css("z-index", "-1");
                 $("#appear").css("opacity", "0");
+                i = Math.round(Math.random() * 5);
+                j = Math.round(Math.random() * 5);
+                k = Math.round(Math.random());
+                while (j == i) {
+                    j = Math.round(Math.random() * 5);
+                };
                 randomImg();
+                randomQuest();
+                rendomDesc();
             })
 
             function randomImg() {
@@ -122,12 +130,14 @@ request.onload = function () {
                         score1++;
                         coin1.innerHTML = score1;
                         rtext.innerHTML = "CORRETTO"
+                        $("#result").css("background-color", "green")
                     }
                     else {
                         score2++;
                         coin2.innerHTML = score2;
-                        rtext.innerHTML = "ERRATO"
-                        $("#result").css("background-color", "red")
+                        rtext.innerHTML = "CORRETTO"
+                        $("#result").css("background-color", "green")
+
                     }
                 }
                 else {
@@ -140,16 +150,12 @@ request.onload = function () {
                     else {
                         score1++;
                         coin1.innerHTML = score1;
-                        rtext.innerHTML = "CORRETTO"
+                        rtext.innerHTML = "ERRATO"
+                        $("#result").css("background-color", "red")
                     }
                 }
             }
 
-            // function sleep(s) {
-            //     var now = new Date().getTime();
-            //     while (new Date().getTime() < now + (s * 1000)) { // non faccio niente 
-            //     }
-            // }
 
 
             function fadeInAppear() {
@@ -159,7 +165,7 @@ request.onload = function () {
 
             function fadeInResult() {
                 $("#result").css("z-index", "1");
-                $("#result").fadeTo("slow", 1)
+                $("#result").fadeTo("fast", 1)
             }
 
             function opacityOn() {
@@ -168,7 +174,6 @@ request.onload = function () {
                 $("#right").css("opacity", "0.4");
                 $("#left").css("opacity", "0.4");
                 $("#vbar").css("opacity", "0");
-                $('img').toggleClass('filter');
             }
 
             function opacityOff() {
@@ -177,7 +182,17 @@ request.onload = function () {
                 $("#right").css("opacity", "1");
                 $("#left").css("opacity", "1");
                 $("#vbar").css("opacity", "1");
-                $('img').toggleClass('filter');
+            }
+
+            function randomQuest() {
+                question = document.getElementById("text"); //serve per poter modificare la domanda fra un round ed il successivo
+                question.innerHTML = info[i].question;
+            }
+
+            function rendomDesc() {
+                title.innerHTML = info[i].title;
+                year.innerHTML += info[i].year;
+                description.innerHTML = info[i].description;
             }
 
 

@@ -231,8 +231,14 @@ body {
 }
 
 #rtext{
+    text-decoration: none;
+    color: black;
     font-family: sans-serif;
     font-size: 50px;
+}
+
+a:hover{
+    cursor: default;
 }
 
 .filter{
