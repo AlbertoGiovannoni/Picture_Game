@@ -16,6 +16,7 @@ request.onload = function () {
         function () {
             console.log('DOMContentLoaded');
 
+
             var i = Math.round(Math.random() * 5);
             var j = Math.round(Math.random() * 5);
             var k = Math.round(Math.random());
@@ -34,28 +35,16 @@ request.onload = function () {
             var title = document.getElementById("title");
             var year = document.getElementById("year");
             var description = document.getElementById("description");
+            while (j == i) {  //impedisce che i sia uguale a j
+                var j = Math.round(Math.random() * 5);
+            };
+            randomImg();
 
             var question = document.getElementById("text"); //serve per poter modificare la domanda fra un round ed il successivo
             question.innerHTML = info[i].question;
 
-            while (j == i) {  //impedisce che i sia uguale a j
-                var j = Math.round(Math.random() * 5);
-            };
 
-            if (k == 0) {
-                $('.picture1l').attr('src', 'img/img' + i + '.jpg');  // questo serve a non mettere sempre la risposta corretta in prima posizione
-                $('.picture1r').attr('src', 'img/img' + i + '.jpg');
-                $('.picture2l').attr('src', 'img/img' + j + '.jpg');
-                $('.picture2r').attr('src', 'img/img' + j + '.jpg');
-                correct = 1;
-            }
-            else {
-                $('.picture1l').attr('src', 'img/img' + j + '.jpg');
-                $('.picture1r').attr('src', 'img/img' + j + '.jpg');
-                $('.picture2l').attr('src', 'img/img' + i + '.jpg');
-                $('.picture2r').attr('src', 'img/img' + i + '.jpg');
-                correct = 2;
-            }
+
 
             title.innerHTML = info[i].title;
             year.innerHTML += info[i].year;
@@ -65,7 +54,7 @@ request.onload = function () {
                 if (point == false) {
                     check(1, 1);
                     point = true;
-                    opacity();
+                    opacityOn();
                     fadeInResult();
                 }
             })
@@ -74,7 +63,7 @@ request.onload = function () {
                 if (point == false) {
                     check(1, 2);
                     point = true;
-                    opacity();
+                    opacityOn();
                     fadeInResult();
                 }
             })
@@ -83,7 +72,7 @@ request.onload = function () {
                 if (point == false) {
                     check(2, 1);
                     point = true;
-                    opacity();
+                    opacityOn();
                     fadeInResult();
                 }
             })
@@ -92,7 +81,7 @@ request.onload = function () {
                 if (point == false) {
                     check(2, 2);
                     point = true;
-                    opacity();
+                    opacityOn();
                     fadeInResult();
                 }
             })
@@ -100,8 +89,32 @@ request.onload = function () {
             $('#result').on('click', function () {
                 $("#result").css("opacity", "0");
                 fadeInAppear();
+            })
+
+            $('#next').on('click', function () {
+                point = false;
+                opacityOff();
+                $("#appear").css("z-index", "-1");
+                $("#appear").css("opacity", "0");
+                randomImg();
+            })
+
+            function randomImg() {
+                if (k == 0) {
+                    $('.picture1l').attr('src', 'img/img' + i + '.jpg');  // questo serve a non mettere sempre la risposta corretta in prima posizione
+                    $('.picture1r').attr('src', 'img/img' + i + '.jpg');
+                    $('.picture2l').attr('src', 'img/img' + j + '.jpg');
+                    $('.picture2r').attr('src', 'img/img' + j + '.jpg');
+                    correct = 1;
+                }
+                else {
+                    $('.picture1l').attr('src', 'img/img' + j + '.jpg');
+                    $('.picture1r').attr('src', 'img/img' + j + '.jpg');
+                    $('.picture2l').attr('src', 'img/img' + i + '.jpg');
+                    $('.picture2r').attr('src', 'img/img' + i + '.jpg');
+                    correct = 2;
+                }
             }
-            )
 
             function check(planswer, player) {   // funzione che attribuisce il punto dopo aver controllato la risposta
                 if (planswer == correct) {
@@ -149,12 +162,21 @@ request.onload = function () {
                 $("#result").fadeTo("slow", 1)
             }
 
-            function opacity() {
+            function opacityOn() {
                 $("#top").css("opacity", "0.4");
                 $("#question").css("opacity", "0.4");
                 $("#right").css("opacity", "0.4");
                 $("#left").css("opacity", "0.4");
                 $("#vbar").css("opacity", "0");
+                $('img').toggleClass('filter');
+            }
+
+            function opacityOff() {
+                $("#top").css("opacity", "1");
+                $("#question").css("opacity", "1");
+                $("#right").css("opacity", "1");
+                $("#left").css("opacity", "1");
+                $("#vbar").css("opacity", "1");
                 $('img').toggleClass('filter');
             }
 
