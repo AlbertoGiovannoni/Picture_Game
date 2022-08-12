@@ -22,7 +22,8 @@
         </div>
         <div class="boxt">
             <div class="timer">
-                <img src="img/bell.png" alt="bell of the timer" id="pic"><span>0:05</span>
+                <img src="img/bell.png" alt="bell of the timer" id="pic"><span id="countdown">0:10</span>
+                <audio src="audio/timer.mp3" id="bell"></audio>
             </div>
         </div>
         <button id="name1">Save Name</button>
@@ -41,7 +42,7 @@
             <span id="title"></span>
         </div>
         <div class="year">
-            <span id="year">Anno di completamento dell'opera: </span>
+            <span id="year"></span>
         </div>
         <div class="description">
             <span id="description"></span>
@@ -58,6 +59,8 @@
             </div>
             <div class="score1">
                 <img src="img/coin.png" alt="score coin" class="coin1">
+                <audio src="audio/coin.mp3" id="coin"></audio>
+                <audio src="audio/error.mp3" id="error"></audio>
                 <span id="s1">0</span>
             </div>
         </div>
@@ -83,6 +86,7 @@
     <div id="end">
         <a href="#" id="winner"></a>
         <button id="newGame">Nuova Partita</button>
+        <audio src="audio/win.mp3" id="win"></audio>
     </div>
 </body>
 

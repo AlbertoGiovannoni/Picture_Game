@@ -16,12 +16,19 @@ request.onload = function () {
         function () {
             console.log('DOMContentLoaded');
 
-
-            var i = Math.round(Math.random() * 5);
-            var j = Math.round(Math.random() * 5);
-            var k = Math.round(Math.random());
             var correct; // correct mi serve per tenere traccia della risposta corretta
             var point = false; // serve per assicurare che in ogni round venga assegnato un solo punto
+            var round = 2;
+
+            var name1;
+            var name2;
+            var bool1 = false;
+            var bool2 = false;
+
+            let seconds = 10;
+            var countdown = document.getElementById('countdown');
+
+            setInterval(updateCountdown, 1000);
 
             var coin1 = document.getElementById('s1');
             var coin2 = document.getElementById('s2');
@@ -38,14 +45,12 @@ request.onload = function () {
 
             var question; //serve per poter modificare la domanda fra un round ed il successivo
 
-            randomQuest();
-
             randomImg();
-
+            randomQuest();
             rendomDesc();
 
             $('.picture1l').on('click', function () {
-                if (point == false) {
+                if (point == false && bool1 == true && bool2 == true) {
                     check(1, 1);
                     point = true;
                     opacityOn();
@@ -54,7 +59,7 @@ request.onload = function () {
             })
 
             $('.picture1r').on('click', function () {
-                if (point == false) {
+                if (point == false && bool1 == true && bool2 == true) {
                     check(1, 2);
                     point = true;
                     opacityOn();
@@ -63,7 +68,7 @@ request.onload = function () {
             })
 
             $('.picture2l').on('click', function () {
-                if (point == false) {
+                if (point == false && bool1 == true && bool2 == true) {
                     check(2, 1);
                     point = true;
                     opacityOn();
@@ -72,7 +77,7 @@ request.onload = function () {
             })
 
             $('.picture2r').on('click', function () {
-                if (point == false) {
+                if (point == false && bool1 == true && bool2 == true) {
                     check(2, 2);
                     point = true;
                     opacityOn();
@@ -88,6 +93,7 @@ request.onload = function () {
             })
 
             $('#next').on('click', function () {
+                seconds = 10;
                 opacityOff();
                 $('img').toggleClass("filter");
                 point = false;
@@ -103,27 +109,44 @@ request.onload = function () {
                 score1 = parseInt(score1);
                 score2 = parseInt(score2);
 
-                if (score1 == 1) {
+                if (score1 == round) {
                     opacityOn();
                     winner1();
                 }
-                else if (score2 == 1) {
+                else if (score2 == round) {
                     opacityOn();
                     winner2();
                 }
             })
 
             $('#newGame').click(function () {
+                point = false;
                 score1 = 0;
                 score2 = 0;
+                seconds = 10;
                 coin1.textContent = "0";
                 coin2.textContent = "0";
                 opacityOff();
                 $("#end").css("z-index", "-1");
+                randomImg();
+                randomQuest();
+                rendomDesc();
+            })
+
+            $('#name1').on('click', function () {
+                name1 = getName1();
+                $('#name1').css("display", "none");
+                bool1 = true;
+            })
+
+            $('#name2').on('click', function () {
+                name2 = getName2();
+                $('#name2').css("display", "none");
+                bool2 = true;
             })
 
             function randomImg() {
-                if (score1 != 1 && score2 != 1) {
+                if (score1 != round && score2 != round) {
                     i = Math.round(Math.random() * 5);
                     j = Math.round(Math.random() * 5);
                     k = Math.round(Math.random());
@@ -154,13 +177,14 @@ request.onload = function () {
                         coin1.innerHTML = score1;
                         rtext.innerHTML = "CORRETTO"
                         $("#result").css("background-color", "green")
+                        document.getElementById("coin").play();
                     }
                     else {
                         score2++;
                         coin2.innerHTML = score2;
                         rtext.innerHTML = "CORRETTO"
                         $("#result").css("background-color", "green")
-
+                        document.getElementById("coin").play();
                     }
                 }
                 else {
@@ -169,13 +193,38 @@ request.onload = function () {
                         coin2.innerHTML = score2;
                         rtext.innerHTML = "ERRATO"
                         $("#result").css("background-color", "red")
+                        document.getElementById("error").play();
                     }
                     else {
                         score1++;
                         coin1.innerHTML = score1;
                         rtext.innerHTML = "ERRATO"
                         $("#result").css("background-color", "red")
+                        document.getElementById("error").play();
                     }
+                }
+            }
+
+            function getName1() {
+                return document.getElementById("input1").value;
+            }
+
+            function getName2() {
+                return document.getElementById("input2").value;
+            }
+
+            function updateCountdown() {
+                if (seconds != -1 && bool1 == true && bool2 == true && point == false) {
+                    let time = seconds < 10 ? '0:0' + seconds : '0:' + seconds;
+                    countdown.innerHTML = time;
+                    seconds--;
+                }
+                else if (seconds == -1 && bool1 == true && bool2 == true && point == false) {
+                    document.getElementById("bell").play();
+                    seconds = 10;
+                    randomImg();
+                    randomQuest();
+                    rendomDesc();
                 }
             }
 
@@ -206,30 +255,34 @@ request.onload = function () {
             }
 
             function randomQuest() {
-                if (score1 != 1 && score2 != 1) {
+                if (score1 != round && score2 != round) {
                     question = document.getElementById("text"); //serve per poter modificare la domanda fra un round ed il successivo
                     question.innerHTML = info[i].question;
                 }
             }
 
             function rendomDesc() {
-                if (score1 != 1 && score2 != 1) {
+                if (score1 != round && score2 != round) {
                     title.innerHTML = info[i].title;
-                    year.innerHTML += info[i].year;
+                    year.innerHTML = "Anno di completamento dell'opera: " + info[i].year;
                     description.innerHTML = info[i].description;
                 }
             }
 
             function winner1() {
+                point = true;
+                document.getElementById("win").play();
                 $("#end").css("z-index", "2");
                 var winner = document.getElementById("winner");
-                winner.innerHTML = "VINCE IL GIOCATORE 1";
+                winner.innerHTML = name1 + " VINCE";
             }
 
             function winner2() {
+                point = true;
+                document.getElementById("win").play();
                 $("#end").css("z-index", "2");
                 var winner = document.getElementById("winner");
-                winner.innerHTML = "VINCE IL GIOCATORE 2";
+                winner.innerHTML = name2 + " VINCE";
             }
 
         }
