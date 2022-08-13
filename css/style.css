@@ -253,13 +253,13 @@ a:hover {
 }
 
 #end {
-    position: absolute;
+    position: relative;
     background-color: #ffd700;
     height: 200px;
     width: 600px;
     z-index: -1;
-    left: 420px;
-    top: 310px;
+    left: 210px;
+    bottom: 550px;
     text-align: center;
     line-height: 200px;
     border: 2px solid black;
