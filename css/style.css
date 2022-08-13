@@ -6,7 +6,7 @@
 body {
     border: 1px solid black;
     max-width: 1024px;
-    max-height: 768px;
+    max-height: 681px;
     margin: auto;
 }
 
@@ -100,7 +100,7 @@ body {
 #question {
     max-width: 650px;
     display: block;
-    margin: 8px auto 8px auto;
+    margin: -10px auto 5px auto;
     text-align: center;
     line-height: 45px;
     height: 45px;
@@ -124,7 +124,7 @@ body {
 .score2 {
     display: flex;
     font-size: 45px;
-    margin-top: 15px;
+    margin-top: 8px;
 }
 
 .score1 span {
@@ -225,14 +225,14 @@ body {
 }
 
 #result {
-    position: absolute;
+    position: relative;
     background-color: green;
     height: 150px;
     width: 500px;
     z-index: -1;
     opacity: 0;
-    left: 32.639%;
-    top: 40.26%;
+    left: 262px;
+    bottom: 374px;
     text-align: center;
     line-height: 150px;
 }
@@ -259,7 +259,7 @@ a:hover {
     width: 600px;
     z-index: -1;
     left: 420px;
-    top: 285px;
+    top: 310px;
     text-align: center;
     line-height: 200px;
     border: 2px solid black;
@@ -286,17 +286,17 @@ a:hover {
 }
 
 #name1 {
-    position: absolute;
+    position: relative;
     width: 80px;
-    left: 37.01%;
+    left: 325px;
     height: 27px;
-    top: 29px;
+    bottom: 45px;
 }
 
 #name2 {
-    position: absolute;
+    position: relative;
     width: 80px;
     height: 27px;
-    right: 37.01%;
-    top: 29px;
+    left: 535px;
+    bottom: 45px;
 }

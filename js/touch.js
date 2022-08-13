@@ -135,13 +135,15 @@ request.onload = function () {
 
             $('#name1').on('click', function () {
                 name1 = getName1();
-                $('#name1').css("display", "none");
+                $('#name1').css("z-index", "-1");
+                $('#name1').css("opacity", "0");
                 bool1 = true;
             })
 
             $('#name2').on('click', function () {
                 name2 = getName2();
-                $('#name2').css("display", "none");
+                $('#name2').css("z-index", "-1");
+                $('#name2').css("opacity", "0");
                 bool2 = true;
             })
 
