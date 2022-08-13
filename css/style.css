@@ -231,8 +231,8 @@ body {
     width: 500px;
     z-index: -1;
     opacity: 0;
-    left: 470px;
-    top: 310px;
+    left: 32.639%;
+    top: 40.26%;
     text-align: center;
     line-height: 150px;
 }
@@ -288,15 +288,15 @@ a:hover {
 #name1 {
     position: absolute;
     width: 80px;
-    left: 533px;
+    left: 37.01%;
     height: 27px;
-    top: 48px;
+    top: 7.23%;
 }
 
 #name2 {
     position: absolute;
     width: 80px;
     height: 27px;
-    right: 533px;
-    top: 48px;
+    right: 37.01%;
+    top: 7.23%;
 }
