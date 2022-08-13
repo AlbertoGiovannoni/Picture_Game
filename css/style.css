@@ -6,7 +6,7 @@
 body {
     border: 1px solid black;
     max-width: 1024px;
-    height: 768px;
+    max-height: 768px;
     margin: auto;
 }
 
