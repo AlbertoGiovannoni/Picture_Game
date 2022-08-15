@@ -18,7 +18,7 @@ request.onload = function () {
 
             var correct; // correct mi serve per tenere traccia della risposta corretta
             var point = false; // serve per assicurare che in ogni round venga assegnato un solo punto
-            var round = 2;
+            var round = 5;
 
             var name1;
             var name2;
