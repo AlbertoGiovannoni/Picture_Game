@@ -143,14 +143,12 @@ body {
 }
 
 .box1 {
-    width: 400px;
     height: 220px;
     margin-bottom: 5%;
     margin-top: 5%;
 }
 
 .box2 {
-    width: 400px;
     height: 220px;
 }
 
@@ -158,21 +156,21 @@ body {
 .picture2l,
 .picture1r,
 .picture2r {
-    width: 400px;
+    width: 373px;
     height: 210px;
 }
 
 #left {
-    margin-left: 5%;
+    margin-left: 7%;
 }
 
 #right {
-    margin-left: 5.74%;
+    margin-left: 67px;
 }
 
 #vbar {
     border: 1px solid black;
-    margin: 5px 0 0 5.64%;
+    margin: 5px 0 0 67px;
     height: 500px;
 }
 
